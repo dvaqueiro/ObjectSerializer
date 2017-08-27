@@ -1,0 +1,16 @@
+<response>
+    <dia_semana>sábado</dia_semana>
+    <fecha>2017-08-19T00:00:00+02:00</fecha>
+    <id_sorteo>991204066</id_sorteo>
+    <apertura>2017-08-17T21:25:00+02:00</apertura>
+    <game_id>LAPR</game_id>
+    <anyo>2017</anyo>
+    <premio_bote>3800000</premio_bote>
+    <recaudacion/>
+    <joker>
+        <gameid>LAJO</gameid>
+        <relsorteoid_asociado>991210066</relsorteoid_asociado>
+        <bote_joker>1000000</bote_joker>
+        <activo>1</activo>
+    </joker>
+</response>

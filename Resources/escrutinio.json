@@ -1,0 +1,88 @@
+{
+    "fecha_sorteo": "2017-08-17 21:43:00",
+    "dia_semana": "jueves",
+    "id_sorteo": "991004065",
+    "game_id": "LAPR",
+    "anyo": "2017",
+    "premio_bote": "0",
+    "cdc": "9910",
+    "apuestas": "10963258",
+    "recaudacion": "1096325800",
+    "combinacion": "08 - 17 - 19 - 45 - 48 - 49 C(43) R(2)",
+    "premios": "602979190",
+    "fondo_bote": "0",
+    "joker": {
+        "gameid": "LAJO",
+        "relsorteoid_asociado": "991010065",
+        "combinacion": "8337021",
+        "bote_joker": 1000000,
+        "activo": "1"
+    },
+    "escrutinio": [{
+            "tipo": "Especial (6 Aciertos + R) ",
+            "categoria": 1,
+            "premio": "0",
+            "ganadores": "0"
+        }, {
+            "tipo": "1\u00aa (6 Aciertos) ",
+            "categoria": 2,
+            "premio": "0",
+            "ganadores": "0"
+        }, {
+            "tipo": "2\u00aa (5 Aciertos + C) ",
+            "categoria": 3,
+            "premio": "34554,98",
+            "ganadores": "6"
+        }, {
+            "tipo": "3\u00aa (5 Aciertos) ",
+            "categoria": 4,
+            "premio": "2428,19",
+            "ganadores": "185"
+        }, {
+            "tipo": "4\u00aa (4 Aciertos) ",
+            "categoria": 5,
+            "premio": "77,54",
+            "ganadores": "9358"
+        }, {
+            "tipo": "5\u00aa (3 Aciertos) ",
+            "categoria": 6,
+            "premio": "8",
+            "ganadores": "184746"
+        }, {
+            "tipo": "Reintegro",
+            "categoria": 7,
+            "premio": "1",
+            "ganadores": "1093541"
+        }],
+    "escrutinio_joker": [{
+            "tipo": "1\u00aa (todas las cifras)",
+            "ganadores": 0,
+            "premio": "1000000",
+            "orden_escrutinio": "1"
+        }, {
+            "tipo": "2\u00aa (6 \u00faltimas cifras)",
+            "ganadores": 0,
+            "premio": "100000",
+            "orden_escrutinio": "2"
+        }, {
+            "tipo": "3\u00aa (5 \u00faltimas cifras)",
+            "ganadores": 5,
+            "premio": "10000",
+            "orden_escrutinio": "3"
+        }, {
+            "tipo": "4\u00aa (4 \u00faltimas cifras)",
+            "ganadores": 38,
+            "premio": "1000",
+            "orden_escrutinio": "4"
+        }, {
+            "tipo": "5\u00aa (3 \u00faltimas cifras)",
+            "ganadores": 331,
+            "premio": "100",
+            "orden_escrutinio": "5"
+        }, {
+            "tipo": "6\u00aa (2 \u00faltimas cifras)",
+            "ganadores": 3324,
+            "premio": "10",
+            "orden_escrutinio": "6"
+        }]
+}

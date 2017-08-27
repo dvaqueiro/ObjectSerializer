@@ -1,0 +1,20 @@
+{
+    "fecha": "2017-08-19 00:00:00",
+    "dia_semana": "s\u00e1bado",
+    "id_sorteo": "991204066",
+    "game_id": "LAPR",
+    "apertura": "2017-08-17 21:25:00",
+    "cierre": "2017-08-19 21:15:00",
+    "anyo": "2017",
+    "premio_bote": "3800000",
+    "destacar_bote": "0",
+    "cdc": "9912",
+    "recaudacion": null,
+    "estado": "abierto",
+    "joker": {
+        "gameid": "LAJO",
+        "relsorteoid_asociado": "991210066",
+        "bote_joker": "1000000",
+        "activo": "1"
+    }
+}
