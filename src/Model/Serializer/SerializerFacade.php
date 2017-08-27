@@ -7,6 +7,7 @@ use ObjectSerializer\Model\Serializer\ArrayMapNameConverter;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
 use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
@@ -49,7 +50,7 @@ class SerializerFacade
         $this->normalizer = new ObjectNormalizer(null, $nameConverter, null, new $propertyInfo());
 
         $this->serializer = new Serializer(
-            array(new DateTimeNormalizer($this->config['dateTimeFormat']), $this->normalizer),
+            array(new DateTimeNormalizer($this->config['dateTimeFormat']), $this->normalizer, new ArrayDenormalizer()),
             array(new JsonEncoder(), new XmlEncoder($this->config['rootNodeName']),
             new CsvEncoder($this->config['delimiter'], $this->config['enclosure'], $this->config['escapeChar'],
                 $this->config['keySeparator']))

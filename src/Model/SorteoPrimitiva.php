@@ -56,10 +56,21 @@ class SorteoPrimitiva
 
     /**
      *
+     * @var integer|string
+     */
+    private $totalPremios;
+
+    /**
+     *
+     * @var PremioPrimitiva[]
+     */
+    private $premios;
+
+    /**
+     *
      * @var Joker
      */
-    private $joker;
-
+    private $sorteoJoker;
 
     /**
      *
@@ -89,16 +100,16 @@ class SorteoPrimitiva
      */
     function setRecaudacion($recaudacion)
     {
-        $this->recaudacion = (int)$recaudacion;
+        $this->recaudacion = (int) $recaudacion;
     }
 
     /**
      *
-     * @param Joker $joker
+     * @param Joker $sorteoJoker
      */
-    function setJoker($joker)
+    function setSorteoJoker($sorteoJoker)
     {
-        $this->joker = $joker;
+        $this->sorteoJoker = $sorteoJoker;
     }
 
     /**
@@ -148,9 +159,18 @@ class SorteoPrimitiva
 
     /**
      *
-     * @param integer|string $premios
+     * @param integer|string $totalPremios
      */
-    function setPremios($premios)
+    function setTotalPremios($totalPremios)
+    {
+        $this->totalPremios = (int) $totalPremios;
+    }
+
+    /**
+     *
+     * @param PremioPrimitiva[] $premios
+     */
+    function setPremios(array $premios)
     {
         $this->premios = $premios;
     }
@@ -231,9 +251,9 @@ class SorteoPrimitiva
      *
      * @return Joker
      */
-    function getJoker()
+    function getSorteoJoker()
     {
-        return $this->joker;
+        return $this->sorteoJoker;
     }
 
     /**
@@ -258,9 +278,17 @@ class SorteoPrimitiva
      *
      * @return type
      */
+    function getTotalPremios()
+    {
+        return $this->totalPremios;
+    }
+
+    /**
+     *
+     * @return PremioPrimitiva[]
+     */
     function getPremios()
     {
         return $this->premios;
     }
-
 }
