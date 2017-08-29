@@ -1,9 +1,8 @@
 <?php
 
-namespace ObjectSerializer\Model\Serializer;
+namespace Dvaqueiro\ObjectSerializer;
 
 use DateTime;
-use ObjectSerializer\Model\Serializer\ArrayMapNameConverter;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
@@ -16,7 +15,7 @@ use Symfony\Component\Serializer\Serializer;
  *
  * @author Daniel Vaqueiro <danielvc4 at gmail.com>
  */
-class SerializerFacade
+class SerializerFacade implements SerializerFacadeInterface
 {
     const JSON = 'json';
     const XML = 'xml';
@@ -24,6 +23,7 @@ class SerializerFacade
     const PHPDOC = 'Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor';
     const REFLECTION = 'Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor';
 
+    private static $allowedFormats = array('json', 'xml', 'csv');
     private $class;
     private $normalizer;
     private $serializer;
@@ -61,33 +61,59 @@ class SerializerFacade
     {
         $_default = array(
             'dateTimeFormat' => DateTime::RFC3339,
-            'rootNodeName' => 'response',
+            'rootNodeName' => $this->getClassNameFromFullQualifiedClassName(),
             'delimiter' => ',',
             'enclosure' => '"',
             'escapeChar' => '\\',
             'keySeparator' => '.',
-            'ignoredAttributes' => null,
         );
 
         $this->config = array_merge($_default, $config);
     }
 
+    private function getClassNameFromFullQualifiedClassName()
+    {
+        $path = explode('\\', $this->class);
+        return array_pop($path);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function deserialize($data, $format, $context = array())
     {
+        $this->checkAllowedFormat($format);
         return $this->serializer->deserialize($data, $this->class, $format, $context);
     }
 
+    private function checkAllowedFormat($format)
+    {
+        if(!in_array($format, static::$allowedFormats)) {
+            throw new NotAllowedFormatException("The format {$format} does not appear to be valid in this context");
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function serialize($object, $format, $context = array())
     {
+        $this->checkAllowedFormat($format);
         return $this->serializer->serialize($object, $format, $context);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setIgnoredAttributes($ignoredAttributes)
     {
         return $this->normalizer->setIgnoredAttributes($ignoredAttributes);
     }
 
-    public function setCallbacks($callbacks)
+    /**
+     * {@inheritdoc}
+     */
+    public function setNormalizationCallbacks($callbacks)
     {
         return $this->normalizer->setCallbacks($callbacks);
     }

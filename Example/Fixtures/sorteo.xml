@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<SorteoPrimitiva>
+    <dia_semana>jueves</dia_semana>
+    <fecha_sorteo>2017-08-17T21:43:00+02:00</fecha_sorteo>
+    <id_sorteo>991004065</id_sorteo>
+    <apertura/>
+    <game_id>LAPR</game_id>
+    <anyo>2017</anyo>
+    <premio_bote>5500000</premio_bote>
+    <recaudacion>1096325800</recaudacion>
+    <joker>
+        <gameid>LAJO</gameid>
+        <relsorteoid_asociado>991010065</relsorteoid_asociado>
+        <bote_joker>1000000</bote_joker>
+        <activo>1</activo>
+        <combinacion>8337021</combinacion>
+    </joker>
+    <apuestas>10963258</apuestas>
+    <combinacion>08 - 17 - 19 - 45 - 48 - 49 C(43) R(2)</combinacion>
+    <premios>602979190</premios>
+    <escrutinio>
+        <tipo>Especial (6 Aciertos + R) </tipo>
+        <categoria>1</categoria>
+        <premio>0</premio>
+        <ganadores>0</ganadores>
+    </escrutinio>
+    <escrutinio>
+        <tipo>1&#xAA; (6 Aciertos) </tipo>
+        <categoria>2</categoria>
+        <premio>0</premio>
+        <ganadores>0</ganadores>
+    </escrutinio>
+    <escrutinio>
+        <tipo>2&#xAA; (5 Aciertos + C) </tipo>
+        <categoria>3</categoria>
+        <premio>34554.98</premio>
+        <ganadores>6</ganadores>
+    </escrutinio>
+    <escrutinio>
+        <tipo>3&#xAA; (5 Aciertos) </tipo>
+        <categoria>4</categoria>
+        <premio>2428.19</premio>
+        <ganadores>185</ganadores>
+    </escrutinio>
+    <escrutinio>
+        <tipo>4&#xAA; (4 Aciertos) </tipo>
+        <categoria>5</categoria>
+        <premio>77.54</premio>
+        <ganadores>9358</ganadores>
+    </escrutinio>
+    <escrutinio>
+        <tipo>5&#xAA; (3 Aciertos) </tipo>
+        <categoria>6</categoria>
+        <premio>8</premio>
+        <ganadores>184746</ganadores>
+    </escrutinio>
+    <escrutinio>
+        <tipo>Reintegro</tipo>
+        <categoria>7</categoria>
+        <premio>1</premio>
+        <ganadores>1093541</ganadores>
+    </escrutinio>
+    <escrutinio_joker>
+        <tipo>1&#xAA; (todas las cifras)</tipo>
+        <ganadores>0</ganadores>
+        <premio>1000000</premio>
+        <orden_escrutinio>1</orden_escrutinio>
+    </escrutinio_joker>
+    <escrutinio_joker>
+        <tipo>2&#xAA; (6 &#xFA;ltimas cifras)</tipo>
+        <ganadores>0</ganadores>
+        <premio>100000</premio>
+        <orden_escrutinio>2</orden_escrutinio>
+    </escrutinio_joker>
+    <escrutinio_joker>
+        <tipo>3&#xAA; (5 &#xFA;ltimas cifras)</tipo>
+        <ganadores>5</ganadores>
+        <premio>10000</premio>
+        <orden_escrutinio>3</orden_escrutinio>
+    </escrutinio_joker>
+    <escrutinio_joker>
+        <tipo>4&#xAA; (4 &#xFA;ltimas cifras)</tipo>
+        <ganadores>38</ganadores>
+        <premio>1000</premio>
+        <orden_escrutinio>4</orden_escrutinio>
+    </escrutinio_joker>
+    <escrutinio_joker>
+        <tipo>5&#xAA; (3 &#xFA;ltimas cifras)</tipo>
+        <ganadores>331</ganadores>
+        <premio>100</premio>
+        <orden_escrutinio>5</orden_escrutinio>
+    </escrutinio_joker>
+    <escrutinio_joker>
+        <tipo>6&#xAA; (2 &#xFA;ltimas cifras)</tipo>
+        <ganadores>3324</ganadores>
+        <premio>10</premio>
+        <orden_escrutinio>6</orden_escrutinio>
+    </escrutinio_joker>
+    <extracciones>
+        <numero>08</numero>
+        <tipo>N</tipo>
+    </extracciones>
+    <extracciones>
+        <numero>17</numero>
+        <tipo>N</tipo>
+    </extracciones>
+    <extracciones>
+        <numero>19</numero>
+        <tipo>N</tipo>
+    </extracciones>
+    <extracciones>
+        <numero>45</numero>
+        <tipo>N</tipo>
+    </extracciones>
+    <extracciones>
+        <numero>48</numero>
+        <tipo>N</tipo>
+    </extracciones>
+    <extracciones>
+        <numero>49</numero>
+        <tipo>N</tipo>
+    </extracciones>
+    <extracciones>
+        <numero>43</numero>
+        <tipo>C</tipo>
+    </extracciones>
+    <extracciones>
+        <numero>2</numero>
+        <tipo>R</tipo>
+    </extracciones>
+</SorteoPrimitiva>

@@ -1,6 +1,6 @@
 <?php
 
-namespace ObjectSerializer\Model;
+namespace Dvaqueiro\Example\Models;
 
 /**
  *
@@ -8,17 +8,16 @@ namespace ObjectSerializer\Model;
  */
 class SorteoPrimitiva
 {
-    private $diaSemana;
-
     /**
      *
      * @var \DateTimeInterface $fecha
      */
     private $fecha;
+    private $diaSemana;
 
     /**
      *
-     * @var int $idSorteo
+     * @var string $idSorteo
      */
     private $idSorteo;
 
@@ -50,9 +49,11 @@ class SorteoPrimitiva
 
     /**
      *
-     * @var string
+     * @var string|null
      */
     private $combinacion;
+
+    private $extracciones;
 
     /**
      *
@@ -64,7 +65,7 @@ class SorteoPrimitiva
      *
      * @var PremioPrimitiva[]
      */
-    private $premios;
+    private $escrutinio;
 
     /**
      *
@@ -74,8 +75,14 @@ class SorteoPrimitiva
 
     /**
      *
+     * @var PremioJoker[]
+     */
+    private $escrutinioJoker;
+
+    /**
+     *
      * @param \DateTimeInterface $fecha
-     * @param int $idSorteo
+     * @param string $idSorteo
      * @param string $gameId
      */
     function __construct(\DateTimeInterface $fecha, $idSorteo, $gameId)
@@ -83,6 +90,7 @@ class SorteoPrimitiva
         $this->fecha = $fecha;
         $this->idSorteo = $idSorteo;
         $this->gameId = $gameId;
+        $this->extracciones = array();
     }
 
     /**
@@ -100,7 +108,8 @@ class SorteoPrimitiva
      */
     function setRecaudacion($recaudacion)
     {
-        $this->recaudacion = (int) $recaudacion;
+        $recaudacion = ($recaudacion !== null) ? (int) $recaudacion : null;
+        $this->recaudacion = $recaudacion;
     }
 
     /**
@@ -155,11 +164,27 @@ class SorteoPrimitiva
     function setCombinacion($combinacion)
     {
         $this->combinacion = $combinacion;
+        $this->setExtracciones($combinacion);
+    }
+
+    private function setExtracciones($combinacion)
+    {
+        if (preg_match_all('@(\d+)\s@', $combinacion, $matches1) !== false) {
+            foreach ($matches1[0] as $match) {
+                $this->extracciones[] = new ExtraccionPrimitiva(trim($match), 'N');
+            }
+        }
+
+        if (preg_match_all('@([A-Z]).(\d+).@', $combinacion, $matches2) !== false) {
+            foreach ($matches2[2] as $key => $match) {
+                $this->extracciones[] = new ExtraccionPrimitiva($match, $matches2[1][$key]);
+            }
+        }
     }
 
     /**
      *
-     * @param integer|string $totalPremios
+     * @param integer|string|null $totalPremios
      */
     function setTotalPremios($totalPremios)
     {
@@ -168,11 +193,20 @@ class SorteoPrimitiva
 
     /**
      *
-     * @param PremioPrimitiva[] $premios
+     * @param PremioPrimitiva[] $escrutinio
      */
-    function setPremios(array $premios)
+    function setEscrutinio(array $escrutinio)
     {
-        $this->premios = $premios;
+        $this->escrutinio = $escrutinio;
+    }
+
+    /**
+     *
+     * @param PremioJoker[] $escrutinioJoker
+     */
+    function setEscrutinioJoker(array $escrutinioJoker)
+    {
+        $this->escrutinioJoker = $escrutinioJoker;
     }
 
     /**
@@ -287,8 +321,22 @@ class SorteoPrimitiva
      *
      * @return PremioPrimitiva[]
      */
-    function getPremios()
+    function getEscrutinio()
     {
-        return $this->premios;
+        return $this->escrutinio;
+    }
+
+    /**
+     *
+     * @return PremioJoker[]
+     */
+    function getEscrutinioJoker()
+    {
+        return $this->escrutinioJoker;
+    }
+
+    function getExtracciones()
+    {
+        return $this->extracciones;
     }
 }

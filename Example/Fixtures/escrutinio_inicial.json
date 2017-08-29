@@ -1,0 +1,27 @@
+{
+    "fecha_sorteo": "2017-08-17 21:43:00",
+    "dia_semana": "jueves",
+    "id_sorteo": "991004065",
+    "game_id": "LAPR",
+    "anyo": "2017",
+    "premio_bote": "6300000",
+    "cdc": "9910",
+    "apuestas": "0",
+    "recaudacion": null,
+    "combinacion": null,
+    "premios": "0",
+    "fondo_bote": "0",
+    "joker": {
+        "gameid": "LAJO",
+        "relsorteoid_asociado": "991010065",
+        "combinacion": "-",
+        "bote_joker": 1000000,
+        "activo": "1"
+    },
+    "escrutinio": [
+
+    ],
+    "escrutinio_joker": [
+
+    ]
+}

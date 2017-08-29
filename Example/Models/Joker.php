@@ -1,6 +1,6 @@
 <?php
 
-namespace ObjectSerializer\Model;
+namespace Dvaqueiro\Example\Models;
 
 /**
  *
@@ -8,7 +8,7 @@ namespace ObjectSerializer\Model;
  */
 class Joker
 {
-    private $gameId;
+    private $gameID;
     private $idSorteoAsociado;
     private $combinacion;
 
@@ -26,12 +26,12 @@ class Joker
 
     /**
      *
-     * @param string $gameId
+     * @param string $gameID
      * @param string $idSorteoAsociado
      */
-    function __construct($gameId, $idSorteoAsociado)
+    function __construct($gameID, $idSorteoAsociado)
     {
-        $this->gameId = $gameId;
+        $this->gameID = $gameID;
         $this->idSorteoAsociado = $idSorteoAsociado;
     }
 
@@ -66,9 +66,9 @@ class Joker
      *
      * @return string
      */
-    function getGameId()
+    function getGameID()
     {
-        return $this->gameId;
+        return $this->gameID;
     }
 
     /**
